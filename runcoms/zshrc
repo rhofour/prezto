@@ -13,3 +13,5 @@ fi
 # Customize to your needs...
 # Rebind Ctrl-R to reverse-history search
 bindkey "^R" history-incremental-pattern-search-backward
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
