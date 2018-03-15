@@ -15,3 +15,4 @@ fi
 bindkey "^R" history-incremental-pattern-search-backward
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+export PATH=~/.local/bin:$PATH
