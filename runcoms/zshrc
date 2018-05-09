@@ -16,3 +16,28 @@ bindkey "^R" history-incremental-pattern-search-backward
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export PATH=~/.local/bin:$PATH
+
+# Have arrow keys use local history while reverse serach
+# uses global history.
+bindkey "OA" up-line-or-local-history
+bindkey "OB" down-line-or-local-history
+
+up-line-or-local-history() {
+    zle set-local-history 1
+    zle up-line-or-history
+    zle set-local-history 0
+}
+zle -N up-line-or-local-history
+down-line-or-local-history() {
+    zle set-local-history 1
+    zle down-line-or-history
+    zle set-local-history 0
+}
+zle -N down-line-or-local-history
+
+# Aliases
+alias localWebserver='http-server -c-1 -a 127.0.0.1'
+
+# NVM stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
